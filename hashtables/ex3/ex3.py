@@ -1,12 +1,31 @@
+"""
+IN
+[
+    [1, 2, 3, 4, 5],
+    [12, 7, 2, 9, 1],
+    [99, 2, 7, 1,]
+]
+OUT
+[1, 2]
+"""
+
 def intersection(arrays):
     """
     YOUR CODE HERE
     """
-    # Your code here
+    dictionary = {}
+    result = []
 
+    for number in arrays[0]:
+        dictionary[number] = 1
+    for array in arrays[1:]:
+        for number in array:
+            if number in dictionary:
+                dictionary[number] += 1
+    for key in dictionary:
+        if dictionary[key] == len(arrays):
+            result.append(key)
     return result
-
-
 if __name__ == "__main__":
     arrays = []
 
