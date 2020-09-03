@@ -1,8 +1,8 @@
 import math
 """
-IN
+Input
 [ 1, -1, 2, 3, -4, -3, 4, -5, 6, 7 ]
-OUT
+Return Value
 [ 1, 3, 4 ]
 """
 def has_negatives(a):
@@ -10,7 +10,6 @@ def has_negatives(a):
     positive = {}
     negative = {}
     result = []
-
     for number in a:
         if number > 0:
             positive[number] = -number
