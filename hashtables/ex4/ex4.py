@@ -5,11 +5,8 @@ IN
 OUT
 [ 1, 3, 4 ]
 """
-
 def has_negatives(a):
-    """
-    YOUR CODE HERE
-    """
+    #Your Code Here
     positive = {}
     negative = {}
     result = []
