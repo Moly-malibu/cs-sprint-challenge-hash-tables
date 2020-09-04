@@ -19,14 +19,16 @@ class Ticket:
         self.source = source
         self.destination = destination
 def reconstruct_trip(tickets, length):
-    #Your code here
+    """
+    YOUR CODE HERE
+    """
     route=[]
-    dictionary = {}
+    flight = {}
     for ticket in tickets:
-        dictionary[ticket.source] = ticket.destination
-    occurence = dictionary["NONE"]
+        flight[ticket.source] = ticket.destination
+    occurence = flight["NONE"]
     route.append(occurence)
     while occurence != "NONE":
-       occurence = dictionary[occurence]
+       occurence = flight[occurence]
        route.append(occurence) 
     return route

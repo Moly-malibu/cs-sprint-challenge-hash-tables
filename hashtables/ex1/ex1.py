@@ -4,8 +4,8 @@ output: [ 3, 1 ]  # since these are the indices of weights 15 and 6 whose sum eq
 """
 
 #finds two items whose sum of weights equals the weight limit
+#two items whose sum of weights equals the weight limi
 
-two items whose sum of weights equals the weight limi
 def get_indices_of_item_weights(weights, length, limit):
     """
     YOUR CODE HERE

@@ -1,6 +1,7 @@
 #https://docs.python.org/3/howto/urllib2.html
-"""
-paths = [
+from os import path
+import os
+""" paths = [
     "/usr/local/share/foo.txt",
     "/usr/bin/ls",
     "/home/davidlightman/foo.txt",
@@ -13,15 +14,14 @@ queries = [
     "nosuchfile.txt"
 ]
 """
-from os import path
-import os
-
 def finder(files, queries):
-    #Your Code Here
+    """
+    YOUR CODE HERE
+    """
     dictionary = {}
     filenames = {}
     result = []
-
+    
     for query in queries:
         filenames[query] = []
     for file in files:

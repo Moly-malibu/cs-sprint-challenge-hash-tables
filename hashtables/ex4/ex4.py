@@ -6,19 +6,18 @@ Return Value
 [ 1, 3, 4 ]
 """
 def has_negatives(a):
-    #Your Code Here
-    positive = {}
-    negative = {}
+    """
+    YOUR CODE HERE
+    """
+    join = {}
     result = []
     for number in a:
-        if number > 0:
-            positive[number] = -number
-        if number < 0:
-            negative[number] = number * -1
-    for key in positive:
-        if positive[key] in negative:
-            result.append(key)
-    return result
+        if join.get(abs(number)):
+            if(join.get(abs(number))+number)==0:
+                result.append(abs(number))
+        else:
+            join[abs(number)] = number
+    return result 
 
 if __name__ == "__main__":
     print(has_negatives([-1, -2, 1, 2, 3, 4, -4]))

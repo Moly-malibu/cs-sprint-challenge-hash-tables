@@ -7,17 +7,19 @@
 """
 
 def intersection(arrays):
-    #Your Code Here
+    """
+    YOUR CODE HERE
+    """ 
     result = []
-    dict_acount = {}
+    cache = {}
     for number in arrays[0]:
-        dict_acount[number] = 1
+        cache[number] = 1
     for array in arrays[1:]:
         for number in array:
-            if number in dict_acount:
-                dict_acount[number] += 1
-    for key in dict_acount:
-        if dict_acount[key] == len(arrays):
+            if number in cache:
+                cache[number] += 1
+    for key in cache:
+        if cache[key] == len(arrays):
             result.append(key)
     return result
 if __name__ == "__main__":
