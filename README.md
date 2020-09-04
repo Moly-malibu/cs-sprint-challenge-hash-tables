@@ -22,10 +22,41 @@ Commit your code regularly and meaningfully. This practice helps both you (in ca
 
 Be prepared to demonstrate your understanding of this week's concepts by answering questions on the following topics. You might prepare by writing down your answers beforehand.
 
-1. Hashing functions
-2. Collision resolution
+1.	Hashing functions: HF is a mathematical function that converts a numerical input value into another compressed numerical value. HF is used to compute the hash value for a key, also HF may return the same hash value for two or more keys.
+
+a.	Input: in the HF the input is of arbitrary length
+b.	Output: in the HF the output fixed length
+c.	Values return by HF are called message or hash values.
+
+        i.	Hash value is used as an index to store the key in the hash table.
+            Hash=hash_function(key)
+            Index=hast % array_size
+
+            Stored array
+            Arr[index]=value
+
+2. Collision resolution:
+
+when two or more items should be kept in the same location, keeping subsequent items within the table and computing possible locations. Keeping lists for items that collide in the chaining, or keeping one special overflow area.
+
 3. Performance of basic hash table operations
+
+Since there is always the initial (constant) cost of hashing, the cost of hash table operations with a good hash function is, on average, O(1 + α). If we can ensure that the load factor α never exceeds some fixed value αmax, then all operations will be O(1 + αmax) = O(1).
+
+Set_item(key, value)
+Get_item(key)
+Delete_item(key)
+
+Data structure      lookup     (contains/get)	add/put	remove
+Array				O(n)		O(1)		    O(n)
+Function			O(1)		O(n)		    N/A
+Linked list			O(n)		O(1)		    O(n)
+Search tree			O(lg n)		O(lg n)		    O(lg n)
+
 4. Load factor
+
+The load factor defines the balance between access time and space. A load factor of f uses a hash table using approximately n/f hash buckets for storing n keys. Each hash bucket will have f keys on average. When more keys are added, the hash table size will be increased by a fixed factor (e.g. 2), and rehashing is done, to ensure that the actual load factor is near the desired load factor. You can use a larger load factor to save space, but at more elements per bucket and therefore worse access time. You can reduce the load factor to improve access time, but the hash table will be larger. This is a typical trade-off between time and space (memory). Time is usually more precious than space. Simply use the default, e.g. 0.75. Using (much) smaller load factors blows up the used memory, but gives you only a minuscule improvement of the access time.
+
 5. Automatic resizing
 6. Various use cases for hash tables
 
