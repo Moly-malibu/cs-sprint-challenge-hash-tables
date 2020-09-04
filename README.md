@@ -57,8 +57,17 @@ Search tree			O(lg n)		O(lg n)		    O(lg n)
 
 The load factor defines the balance between access time and space. A load factor of f uses a hash table using approximately n/f hash buckets for storing n keys. Each hash bucket will have f keys on average. When more keys are added, the hash table size will be increased by a fixed factor (e.g. 2), and rehashing is done, to ensure that the actual load factor is near the desired load factor. You can use a larger load factor to save space, but at more elements per bucket and therefore worse access time. You can reduce the load factor to improve access time, but the hash table will be larger. This is a typical trade-off between time and space (memory). Time is usually more precious than space. Simply use the default, e.g. 0.75. Using (much) smaller load factors blows up the used memory, but gives you only a minuscule improvement of the access time.
 
-5. Automatic resizing
-6. Various use cases for hash tables
+5. Automatic resizing:
+
+The rehash size specifies how much to increase the usable size of the hash table when it becomes full. It is either an exact positive integer, or a real number greater than one. If it is an integer, the new size is the sum of the old size and the rehash size. Otherwise, it is a real number, and the new size is the product of the old size and the rehash size. Increasing the rehash size decreases the average cost of an insertion, but increases the average amount of space used by the table. The rehash size of a table may be altered dynamically by the application in order to optimize the resizing of the table; for example, if the table will grow quickly for a known period and afterwards will not change size, performance might be improved by using a large rehash size during the growth phase and a small one during the static phase. The default rehash size of a newly constructed hash table is 2.0.
+
+6. Various use cases for hash tables:
+
+*Storing access based on a non integer
+*Storing sparse storage even based on an integer.
+*Storing anything where there is no need to access data in the order the data is inserted 
+*Storage where insertion and access both need to be fast.
+*Storage where uniqueness is useful.
 
 We expect you to be able to answer questions in these areas. Your responses contribute to your Sprint Challenge grade.
 
